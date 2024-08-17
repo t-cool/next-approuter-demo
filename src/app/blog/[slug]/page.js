@@ -6,7 +6,7 @@ export default function BlogPost({ params }) {
 
   if (!post) {
     return (
-      <div>
+      <div className="container">
         <h1>記事が見つかりません</h1>
         <Link href="/">Back to Home</Link>
       </div>
@@ -14,7 +14,7 @@ export default function BlogPost({ params }) {
   }
 
   return (
-    <article>
+    <article className="container">
       <h1>{post.title}</h1>
       <p>{post.content}</p>
       <br />
