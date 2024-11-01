@@ -1,5 +1,12 @@
 import Link from 'next/link';
-import { getPostBySlug } from '../blogData';
+import { getPostBySlug, getAllPosts } from '../blogData';
+
+export function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export default function BlogPost({ params }) {
   const post = getPostBySlug(params.slug);
